@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Пример страницы</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
 
@@ -15,8 +15,23 @@
 
     <main>
         <p>Это пример адаптивной HTML страницы с заголовком, описанием и кнопкой "купить".</p>
-        <button>Купить</button>
+        <button onclick="showRegistrationForm()">Купить</button>
     </main>
 
+    <div id="registrationForm" style="display:none;">
+        <h2>Регистрация</h2>
+        <form>
+            <input type="text" id="name" name="name" placeholder="Имя" required><br>
+            <input type="email" id="email" name="email" placeholder="Почта" required><br>
+            <input type="password" id="password" name="password" placeholder="Пароль" required><br>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
