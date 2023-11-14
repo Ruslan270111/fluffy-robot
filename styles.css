@@ -39,3 +39,18 @@ button {
 button:hover {
     background-color: var(--tg-theme-secondary-bg-color);
 }
+
+#registrationForm {
+    display: none;
+    text-align: center;
+    margin: auto;
+}
+
+#registrationForm h2 {
+    margin-bottom: 10px;
+}
+
+#registrationForm form {
+    display: flex;
+    flex-direction: column;
+}
