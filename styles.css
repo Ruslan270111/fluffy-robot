@@ -30,10 +30,11 @@ main {
 button {
     background-color: var(--tg-theme-button-color);
     color: var(--tg-theme-button-text-color);
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 16px;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 button:hover {
@@ -53,4 +54,11 @@ button:hover {
 #registrationForm form {
     display: flex;
     flex-direction: column;
+}
+
+#registrationForm input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
