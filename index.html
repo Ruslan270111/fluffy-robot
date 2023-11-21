@@ -63,16 +63,47 @@
     <div class="container">
         <h2>Регистрация</h2>
         <form>
-            <input type="email" name="email" placeholder="Почта" required><br>
-            <input type="tel" name="phone" placeholder="Телефон" required><br>
-            <input type="password" name="password" placeholder="Пароль" required><br>
+            <input type="email" id="email" placeholder="Почта" required><br>
+            <input type="tel" id="phone" placeholder="Телефон" required><br>
+            <input type="password" id="password" placeholder="Пароль" required><br>
             <button id="signup" type="submit">Зарегистрироваться</button>
         </form>
     </div>
     <script>
         let tg = window.Telegram.WebApp;
-        tg.expand()
-        let signup = document.getElementById("signup")
+        tg.expand();
+
+        let signup = document.getElementById("signup");
+        signup.addEventListener("click", () => {
+            const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+            const email_valid = document.getElementById("email");
+
+
+            if (isEmailValid(email_valid.value)) {
+                let email = document.getElementById("email").value;
+            }
+            else {
+                return
+            }
+
+            function isEmailValid(value) {
+                return EMAIL_REGEXP.test(value);
+            }
+
+
+            let phone = document.getElementById("phone").value;
+            let password = document.getElementById("password").value;
+            let data = {
+                email: email,
+                phone: phone,
+                password: password
+            }
+
+            tg.sendData(JSON.stringify(data));
+
+
+            tg.close();
+        });
     </script>
 </body>
 </html>
