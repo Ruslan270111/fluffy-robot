@@ -76,13 +76,14 @@
         let signup = document.getElementById("signup");
         signup.addEventListener("click", () => {
             const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
-            const email_valid = document.getElementById("email");
+            let email = document.getElementById("email").value;
 
 
-            if (isEmailValid(email_valid.value)) {
-                let email = document.getElementById("email").value;
+            if (isEmailValid(email.value)) {
+                email = document.getElementById("email").value;
             }
             else {
+                email.value = "123"
                 return
             }
 
@@ -96,7 +97,7 @@
             let data = {
                 email: email,
                 phone: phone,
-                password: password
+                password: password,
             }
 
             tg.sendData(JSON.stringify(data));
