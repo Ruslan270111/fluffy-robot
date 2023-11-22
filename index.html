@@ -76,14 +76,14 @@
         let signup = document.getElementById("signup");
         signup.addEventListener("click", () => {
             const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
-            let email = document.getElementById("email").value;
+            let email
+            let email_valid = document.getElementById("email").value;
 
 
-            if (isEmailValid(email.value)) {
+            if (isEmailValid(email_valid.value)) {
                 email = document.getElementById("email").value;
             }
             else {
-                email.value = "123"
                 return
             }
 
