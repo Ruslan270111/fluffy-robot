@@ -75,16 +75,18 @@
 
         let signup = document.getElementById("signup");
         signup.addEventListener("click", () => {
+            const input = document.querySelector('input');
             const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
             let email;
             let email_valid = document.getElementById("email").value;
 
 
             if (isEmailValid(email_valid.value)) {
+                input.style.borderColor = 'green';
                 email = document.getElementById("email").value;
             }
             else {
-                return;
+                input.style.borderColor = 'red';
             }
 
             function isEmailValid(value) {
