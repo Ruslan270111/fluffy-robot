@@ -76,7 +76,7 @@
         let signup = document.getElementById("signup");
         signup.addEventListener("click", () => {
             const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
-            let email
+            let email;
             let email_valid = document.getElementById("email").value;
 
 
@@ -84,7 +84,7 @@
                 email = document.getElementById("email").value;
             }
             else {
-                return
+                return;
             }
 
             function isEmailValid(value) {
